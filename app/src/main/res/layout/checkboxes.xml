@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/checkboxes"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <CheckBox
+        android:id="@+id/checkbox01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_1" />
+
+    <CheckBox
+        android:id="@+id/checkbox02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_2" />
+
+    <CheckBox
+        android:id="@+id/checkbox03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_1" />
+</TableRow>

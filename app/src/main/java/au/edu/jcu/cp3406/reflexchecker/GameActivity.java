@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -50,5 +51,16 @@ public class GameActivity extends AppCompatActivity {
 
         int index = random.nextInt(drawables.length);
         image.setImageDrawable(getResources().getDrawableForDensity(drawables[index], 0));
+    }
+
+    public void addCheckboxes(int arrayID) {
+        ViewGroup gameRows = findViewById(R.id.game_rows);
+        getLayoutInflater().inflate(R.layout.checkboxes, gameRows);
+
+        View lastChild = gameRows.getChildAt(gameRows.getChildCount() - 1);
+        TableRow checkbox = lastChild.findViewById(R.id.checkboxes);
+
+        checkbox.
+//        int index = random.nextInt(drawables.length);
     }
 }
