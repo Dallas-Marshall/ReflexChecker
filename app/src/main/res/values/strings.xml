@@ -17,4 +17,16 @@
         <item>Deselect all Fruits</item>
         <item>Select one Fruits</item>
     </string-array>
+
+    <string-array name="drinks">
+        <item>Jack Daniels</item>
+        <item>Jamesons</item>
+        <item>Vodka</item>
+    </string-array>
+
+    <string-array name="fruits">
+        <item>Watermelon</item>
+        <item>Mango</item>
+        <item>Mandarin</item>
+    </string-array>
 </resources>
