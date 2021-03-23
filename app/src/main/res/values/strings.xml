@@ -4,6 +4,7 @@
     <string name="start">START</string>
     <string name="task_1">Task 1:</string>
     <string name="task_2">Task 2:</string>
+    <string name="image_spacer">image spacer</string>
 
     <string-array name="task1_descriptions">
         <item>Select all drinks</item>
