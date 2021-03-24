@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -29,9 +30,11 @@ public class GameActivity extends AppCompatActivity {
         setupDescription(R.id.task1, R.array.task1_descriptions);
         setupDescription(R.id.task2, R.array.task2_descriptions);
 
-        for (int i = 0; i < 5; i++) {
-            addImage();
-        }
+        // Inflate image and checkboxes layout
+        addImage();
+        addCheckboxes(R.array.drinks);
+        addImage();
+        addCheckboxes(R.array.fruits);
     }
 
     public void setupDescription(int taskID, int arrayID) {
@@ -58,9 +61,15 @@ public class GameActivity extends AppCompatActivity {
         getLayoutInflater().inflate(R.layout.checkboxes, gameRows);
 
         View lastChild = gameRows.getChildAt(gameRows.getChildCount() - 1);
-        TableRow checkbox = lastChild.findViewById(R.id.checkboxes);
+        TableRow row = lastChild.findViewById(R.id.checkboxes);
 
-        checkbox.
-//        int index = random.nextInt(drawables.length);
+        String[] descriptions = getResources().getStringArray(arrayID);
+        for (int i = 0; i < 3; i++) {
+            CheckBox checkbox = (CheckBox) row.getChildAt(i);
+            checkbox.setText(descriptions[i]);
+            checkbox.setChecked(false);
+
+
+        }
     }
 }
