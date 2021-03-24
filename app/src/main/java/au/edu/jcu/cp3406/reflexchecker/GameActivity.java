@@ -10,10 +10,14 @@ import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.Locale;
 import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
     private final Random random = new Random();
+    private long startTime;
+    private long endTime;
+
     private static final int[] drawables = {
             R.drawable.baseline_commute_black_48,
             R.drawable.baseline_flight_land_black_48,
@@ -35,6 +39,9 @@ public class GameActivity extends AppCompatActivity {
         addCheckboxes(R.array.drinks);
         addImage();
         addCheckboxes(R.array.fruits);
+
+        // Note system time
+        startTime = System.nanoTime();
     }
 
     public void setupDescription(int taskID, int arrayID) {
@@ -63,13 +70,25 @@ public class GameActivity extends AppCompatActivity {
         View lastChild = gameRows.getChildAt(gameRows.getChildCount() - 1);
         TableRow row = lastChild.findViewById(R.id.checkboxes);
 
-        String[] descriptions = getResources().getStringArray(arrayID);
+        String[] labels = getResources().getStringArray(arrayID);
         for (int i = 0; i < 3; i++) {
             CheckBox checkbox = (CheckBox) row.getChildAt(i);
-            checkbox.setText(descriptions[i]);
-            checkbox.setChecked(false);
-
-
+            checkbox.setText(labels[i]);
+            checkbox.setChecked(random.nextInt(2) == 1);
         }
+    }
+
+    public void doneClicked(View view) {
+        endTime = System.nanoTime();
+
+        // TODO: Check input is correct
+
+        long timeTaken = (endTime - startTime) / 1000000000;
+        int seconds = (int) timeTaken % 60;
+        int minutes = (int) timeTaken / 60;
+
+        TextView timer = findViewById(R.id.timer);
+        Locale locale = Locale.getDefault();
+        timer.setText(String.format(locale, "%02x:%02x", minutes, seconds));
     }
 }

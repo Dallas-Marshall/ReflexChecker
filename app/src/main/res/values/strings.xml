@@ -5,6 +5,8 @@
     <string name="task_1">Task 1:</string>
     <string name="task_2">Task 2:</string>
     <string name="image_spacer">image spacer</string>
+    <string name="done">Done</string>
+    <string name="timer_0">00:00</string>
 
     <string-array name="task1_descriptions">
         <item>Select all drinks</item>
